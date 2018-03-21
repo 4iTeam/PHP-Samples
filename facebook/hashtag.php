@@ -9,7 +9,7 @@ define('LOG_FILE',__DIR__.'/log.txt');//File lưu thông tin các post đã nh�
 $token = '';
 $idgroup = '1415192401896193'; /* Id Group */
 $results = json_decode(file_get_contents('https://graph.facebook.com/v2.9/' .$idgroup
-    . '/feed?fields=id,message,created_time,from&limit=1&access_token=' . $token), true); /* Get Data Post*/
+    . '/feed?fields=id,message,created_time,from&limit=50&access_token=' . $token), true); /* Get Data Post*/
 $posts=[];
 
 if(isset($results['data'])){
