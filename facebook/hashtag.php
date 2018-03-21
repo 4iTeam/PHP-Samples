@@ -3,7 +3,10 @@ set_time_limit(0);
 error_reporting(0);
 define('HASHTAG_NAMESPACE', '#4ito_');/* Sửa hashtag tại đây , chữ thường không viết hoa*/
 define('LOG_FILE',__DIR__.'/log.txt');//File lưu thông tin các post đã nhắc hashtag để không nhắc lại lần sau
-$token = '';//Token của bạn
+//Token của bạn, không cần phải dùng token của quản trị viên, chỉ cần sử dụng token của thành viên trong group là được
+//Bạn có thể tạo 1 facebook khác sử dụng để nhắc hashtag
+//Token được lấy bằng cách vào Profile -> View Source -> Ctrl+F tìm EAAAA
+$token = '';
 $idgroup = '1415192401896193'; /* Id Group */
 $results = json_decode(file_get_contents('https://graph.facebook.com/v2.9/' .$idgroup
     . '/feed?fields=id,message,created_time,from&limit=1&access_token=' . $token), true); /* Get Data Post*/
